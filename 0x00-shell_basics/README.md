@@ -10,4 +10,6 @@
 
 5-listfilesdigitonly script --> Displays current directory's content with users and groud ids displayed numerically
 
-6-firstdirectory scrit --> Creates a directory named my_first_directory in the /tmp/ directory
+6-firstdirectory script --> Creates a directory named my_first_directory in the /tmp/ directory
+
+7-movethatfile script --> move the file betty from /tmp/ to /tmp/my_first_directory
