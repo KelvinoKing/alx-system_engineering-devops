@@ -27,3 +27,5 @@
 13-symbolic_link --> Creates a link to /bin/ls
 
 14-copy_html script --> Creates a script that copies althe HTML files from current working directory to parent directory but only copies files that did not exist or are newer than the versions in the parent directory
+
+100-lets_move script --> Moves all the files starting with an uppercase letter to the directory /tmp/u
