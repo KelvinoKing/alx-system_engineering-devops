@@ -9,3 +9,5 @@
 4-empry script --> Creates an empty file hello
 
 5-execute script --> Adds execute permission to the owner of file
+
+6-multiple_permissions script --> Add execute permission to the owner and the group owner and read permission to the other users
