@@ -11,3 +11,5 @@
 5-execute script --> Adds execute permission to the owner of file
 
 6-multiple_permissions script --> Add execute permission to the owner and the group owner and read permission to the other users
+
+7-everybody script --> Adds execution permission to the owner ,group and other users
