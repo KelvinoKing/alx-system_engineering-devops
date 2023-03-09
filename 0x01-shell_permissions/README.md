@@ -7,3 +7,5 @@
 3-new_owner script --> Changers the owership of "hello" file to betty
 
 4-empry script --> Creates an empty file hello
+
+5-execute script --> Adds execute permission to the owner of file
