@@ -19,3 +19,5 @@
 9-John_Doe script --> Sets the mode to -rwxr-x-wx
 
 10-mirror_permissions --> Sets the mode of hello file the same as olleh file
+
+11-directories_permissions script --> Adds execute permissions to all subdirectories of the current working directory for the owner,group and others
