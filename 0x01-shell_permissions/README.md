@@ -17,3 +17,5 @@
 8-James_Bond scriot --> Sets no permission at all to both owner and group and all permissions to others
 
 9-John_Doe script --> Sets the mode to -rwxr-x-wx
+
+10-mirror_permissions --> Sets the mode of hello file the same as olleh file
