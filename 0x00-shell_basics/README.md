@@ -25,3 +25,5 @@
 12-file_type script --> Prints the type of file named iamafile
 
 13-symbolic_link --> Creates a link to /bin/ls
+
+14-copy_html script --> Creates a script that copies althe HTML files from current working directory to parent directory but only copies files that did not exist or are newer than the versions in the parent directory
