@@ -21,3 +21,5 @@
 10-mirror_permissions --> Sets the mode of hello file the same as olleh file
 
 11-directories_permissions script --> Adds execute permissions to all subdirectories of the current working directory for the owner,group and others
+
+12-directory_permissions script --> Creates a dir my_dir and sets its mode to 751 in the working directory
