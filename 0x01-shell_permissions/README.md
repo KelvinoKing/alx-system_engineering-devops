@@ -13,3 +13,5 @@
 6-multiple_permissions script --> Add execute permission to the owner and the group owner and read permission to the other users
 
 7-everybody script --> Adds execution permission to the owner ,group and other users
+
+8-James_Bond scriot --> Sets no permission at all to both owner and group and all permissions to others
