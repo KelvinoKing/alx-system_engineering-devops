@@ -23,3 +23,5 @@
 11-lists script --> List all files even the ones hidden in the current directory,the parent directory and in /boot
 
 12-file_type script --> Prints the type of file named iamafile
+
+13-symbolic_link --> Creates a link to /bin/ls
