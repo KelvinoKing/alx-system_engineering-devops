@@ -31,3 +31,5 @@
 101-symbolic_link_permissions --> Changes the owner and the group of _hello to vincent and staff respectively, _hello is a symbolic link
 
 102-if_only script --> Changes the owner of the file hello to betty if only its owned by guillaume
+
+103-Star_Wars script --> Script plays the StarWarsIV episode in the terminal
