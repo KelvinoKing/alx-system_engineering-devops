@@ -29,3 +29,5 @@
 100-change_owner_and_group --> Changes the owner to vincent and the group to staff for all files and dir
 
 101-symbolic_link_permissions --> Changes the owner and the group of _hello to vincent and staff respectively, _hello is a symbolic link
+
+102-if_only script --> Changes the owner of the file hello to betty if only its owned by guillaume
