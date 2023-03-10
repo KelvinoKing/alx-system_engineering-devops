@@ -27,3 +27,5 @@
 13-change_group script --> Changesthe group owner to school for file hello
  
 100-change_owner_and_group --> Changes the owner to vincent and the group to staff for all files and dir
+
+101-symbolic_link_permissions --> Changes the owner and the group of _hello to vincent and staff respectively, _hello is a symbolic link
