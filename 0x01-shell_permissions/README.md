@@ -25,3 +25,5 @@
 12-directory_permissions script --> Creates a dir my_dir and sets its mode to 751 in the working directory
 
 13-change_group script --> Changesthe group owner to school for file hello
+ 
+100-change_owner_and_group --> Changes the owner to vincent and the group to staff for all files and dir
