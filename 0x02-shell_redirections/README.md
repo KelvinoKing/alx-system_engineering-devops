@@ -11,3 +11,5 @@
 5-firstlines --> Display the first 10 lines of /etc/passwd
 
 6-third_line --> Display the third line of iacta
+
+7-file --> Creates a file that contains a text "Best School" ending by a new line
