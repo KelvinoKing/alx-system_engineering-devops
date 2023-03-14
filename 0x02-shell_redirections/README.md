@@ -41,3 +41,5 @@
 20-hiago --> Removes all letters c and C from input
 
 21-reverse --> Reverse input
+
+22-users_and_homes --> Displays all users and their home directories, sorted by users
