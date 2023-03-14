@@ -23,3 +23,5 @@
 11-directories --> Counts the number of dir and sub-dir in the current dir
 
 12-newest_files --> Displays the 10 newest files in the current dir
+
+13-unique --> Takes a list of words as input and prints only words that appear exactly once
