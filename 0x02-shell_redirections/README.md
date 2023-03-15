@@ -43,3 +43,9 @@
 21-reverse --> Reverse input
 
 22-users_and_homes --> Displays all users and their home directories, sorted by users
+
+100-empty_casks --> Displays all empty files and directories in the current directory and all sub-directories
+     -Only the ames of the files and dir are displayed
+     -Hidden files should be listed
+     -One file name per line
+     -The listing ends with new line
