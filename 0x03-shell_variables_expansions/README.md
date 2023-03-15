@@ -5,3 +5,5 @@
 2-path --> Add /action to the PATH. /action should be the last dir the shell looks into when looking for a program
 
 3-paths --> Counts the number of Dir in the PATH variable
+
+4-global_variables --> Lists all environmental variables
