@@ -29,3 +29,6 @@
 	- display hours from 0 to 12
 
 	- display minutes from 1 to 59
+
+***8-for_ls*** -> *Displays content of current dir in a list format omitting the
+ first characters up to the first dash*
