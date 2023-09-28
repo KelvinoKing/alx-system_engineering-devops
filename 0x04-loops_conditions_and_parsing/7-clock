@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+#prints 12hrs and 59min
+min=1
+hrs=0
+echo "Hour: $hrs"
+while ((hrs < 13))
+do
+	if ((min == 60))
+	then
+		((hrs += 1))
+		((min=1))
+		if ((hrs < 13))
+		then
+			echo "Hour: $hrs"
+		fi
+	fi
+
+	if ((hrs <= 12))
+	then
+		echo "$min"
+	fi
+	((min++))
+done
