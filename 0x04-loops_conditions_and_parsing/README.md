@@ -34,3 +34,5 @@
  first characters up to the first dash*
 
 ***9-to_file_or_not_to_file*** -> *gives you information about the school file.*
+
+***10-fizzbuzz*** -> *Displays numbers from 1 to 100*
