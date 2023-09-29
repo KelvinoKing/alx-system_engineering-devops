@@ -32,3 +32,5 @@
 
 ***8-for_ls*** -> *Displays content of current dir in a list format omitting the
  first characters up to the first dash*
+
+***9-to_file_or_not_to_file*** -> *gives you information about the school file.*
