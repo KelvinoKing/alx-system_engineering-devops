@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#creates a pid file and handle signals
+file=/var/run/myscript.pid
+echo $$ >> $file
+trap 'echo I hate the kill command; sudo rm $file; exit' SIGTERM
+trap 'echo Y U no love me?!' SIGINT
+trap 'sudo rm $file; exit' SIGQUIT
+for ((i = 0;; i++));do
+	echo "To infinity and beyond"
+	sleep 2
+done
