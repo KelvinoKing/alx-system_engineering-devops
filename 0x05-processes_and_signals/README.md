@@ -15,3 +15,5 @@
 ***7-highlander*** -> *Receives a signal and outputs a string to stdout*
 
 ***67-stop_me_if_you_can*** -> *Sends signals to the 7-highlander script*
+
+***8-beheaded_process*** -> *Kills 7-highlander process with SIGKILL signal*
