@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #Kills 7-highlander process with SIGKILL signal
 my_pid=$(pgrep -f highlander)
-kill -SIGKILL $my_pid
+kill -SIGKILL "$my_pid"
