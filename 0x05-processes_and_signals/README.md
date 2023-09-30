@@ -11,3 +11,7 @@
 ***5-dont_stop_me_now*** -> *stops 4-to_infinity_and_beyond process.*
 
 ***6-stop_me_if_you_can*** -> *stops 4-to_infinity_and_beyond process using pkill*
+
+***7-highlander*** -> *Receives a signal and outputs a string to stdout*
+
+***67-stop_me_if_you_can*** -> *Sends signals to the 7-highlander script*
