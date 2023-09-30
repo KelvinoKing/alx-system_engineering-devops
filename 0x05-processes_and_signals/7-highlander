@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#Prints 'I am invincible!!!' when a SIGTERM signal is sent
+function sigterm_capture(){
+	echo "I am invincible!!!"
+}
+for ((i = 0;; i++))
+do
+	trap sigterm_capture SIGTERM
+	echo "To infinity and beyond"
+	sleep 2
+done

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#script that stops 4-to_infinity_and_beyond processscript using pkill
+my_pid=$(pgrep -f highlander)
+kill -SIGTERM $my_pid
