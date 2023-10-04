@@ -11,3 +11,5 @@
 ***5-beginning_and_end.rb*** -> *Not quite HBTN yet*
 
 ***6-phone_number.rb*** -> *Call me maybe*
+
+***7-OMG_WHY_ARE_YOU_SHOUTING*** -> *Match all uppercase characters*
