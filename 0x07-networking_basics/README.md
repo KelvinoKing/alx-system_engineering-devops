@@ -9,3 +9,5 @@
 ***3-UDP_and_TCP*** -> *UDP and TCP*
 
 ***4-TCP_and_UDP_ports*** -> *Shows only listening ports*
+
+***5-is_the_host_on_the_network*** -> *Is the host on the network*
