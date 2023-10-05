@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#Changes localhost IP address in the hosts file and adds IP address for
+#+Facebook.com
+my_localhost_ip=127.0.0.2
+facebook_ip=8.8.8.8
+
+cp /etc/hosts ~/hosts.new
+sed -i "s/^127\.0\.0\.1.*/$my_localhost_ip localhost/" ~/hosts.new
+echo "$facebook_ip facebook.com" >> ~/hosts.new
+cp -f ~/hosts.new /etc/hosts
