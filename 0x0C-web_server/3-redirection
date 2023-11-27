@@ -15,4 +15,3 @@ sed -i '/location \/ {/a \\n    location \/redirect_me {\n        return 301 htt
 
 # Restart Nginx to apply the changes
 service nginx restart
-
