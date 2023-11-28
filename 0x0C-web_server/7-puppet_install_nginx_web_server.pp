@@ -1,8 +1,15 @@
 # File: nginx_config.pp
 
 # Install Nginx package
+
+exec { 'apt-update':
+  command     => '/usr/bin/apt-get update',
+  refreshonly => true,
+}
+
 package { 'nginx':
-  ensure => installed,
+  ensure  => installed,
+  require => Exec['apt-update'],
 }
 
 file { '/etc/nginx/sites-available':
