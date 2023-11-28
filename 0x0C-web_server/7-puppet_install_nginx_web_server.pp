@@ -41,5 +41,6 @@ file_line { 'redirect':
 
 service { 'nginx':
   ensure  => running,
-  require => Package['nginx'],
+  require => [Package['nginx'], File['/etc/nginx/sites-available/default']],
+  notify  => Service['nginx'],
 }
