@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Configures web-02 to be identical to web-01 server
 
-apt-get upgrade
+apt-get -y upgrade
 
-apt-get install -y nginx
+apt-get -y install nginx
 
 echo "Hello World!" | tee /var/www/html/index.html
 
