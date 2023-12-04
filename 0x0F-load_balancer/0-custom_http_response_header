@@ -5,7 +5,7 @@ apt-get upgrade
 
 apt-get install -y nginx
 
-HOSTNAME=$(hostname)
+echo "Ceci n'est pas une page" | tee /var/www/html/404.html
 
 cat <<EOF | tee /etc/nginx/sites-available/default
 server {
@@ -20,14 +20,13 @@ server {
      }
 
      error_page 404 /404.html;
-     location = /404.html {
-        root /var/www/html;
+     location /404 {
+        root /etc/nginx/html;
+        internal;
      }
 
      add_header X-Served-By $HOSTNAME;
 }
 EOF
-
-echo "Ceci n'est pas une page" | tee /var/www/html/404.html
 
 service nginx restart
