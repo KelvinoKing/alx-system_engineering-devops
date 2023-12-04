@@ -33,4 +33,4 @@ EOF
 
 echo "Ceci n'est pas une page" | tee /etc/nginx/html/404.html
 
-sudo service nginx restart
+service nginx restart
