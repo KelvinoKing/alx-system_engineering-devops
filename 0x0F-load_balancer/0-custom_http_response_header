@@ -13,7 +13,8 @@ echo "Hello World!" | tee /etc/nginx/html/index.html
 cat <<EOF | tee /etc/nginx/sites-available/default
 server {
      listen 80;
-     listen [::]:80 default_server;
+     listen [::]:80;
+     server_name _;
      add_header X-Served-By $HOSTNAME;
      root /etc/nginx/html;
      index index.html index.htm;
