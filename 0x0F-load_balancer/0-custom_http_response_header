@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 # Configures web-02 to be identical to web-01 server
 
-sudo apt-get upgrade
+apt-get upgrade
 
-sudo apt-get install -y nginx
+apt-get install -y nginx
 
 HOSTNAME=$(hostname)
 
-cat <<EOF | sudo tee /etc/nginx/sites-available/default
+cat <<EOF | tee /etc/nginx/sites-available/default
 server {
      listen 80;
      server_name _;
@@ -28,6 +28,6 @@ server {
 }
 EOF
 
-echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+echo "Ceci n'est pas une page" | tee /var/www/html/404.html
 
-sudo service nginx restart
+service nginx restart
