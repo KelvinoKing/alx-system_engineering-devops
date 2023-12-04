@@ -10,7 +10,6 @@ touch /etc/nginx/html/index.html
 
 echo "Hello World!" | tee /etc/nginx/html/index.html
 
-HOSTNAME=${hostname}
 cat <<EOF | tee /etc/nginx/sites-available/default
 server {
      listen 80;
