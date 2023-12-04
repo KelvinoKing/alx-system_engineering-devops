@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 # Configures web-02 to be identical to web-01 server
 
-apt-get -y upgrade
+sudo apt-get -y upgrade
 
-apt-get -y install nginx
+sudo apt-get -y install nginx
 
-mkdir /etc/nginx/html
-touch /etc/nginx/html/index.html
+sudo mkdir /etc/nginx/html
+sudo touch /etc/nginx/html/index.html
 
-echo "Hello World!" | tee /etc/nginx/html/index.html
+echo "Hello World!" | sudo tee /etc/nginx/html/index.html
 
-cat <<EOF | tee /etc/nginx/sites-available/default
+cat <<EOF | sudo tee /etc/nginx/sites-available/default
 server {
      listen 80;
      listen [::]:80;
@@ -31,6 +31,6 @@ server {
 }
 EOF
 
-echo "Ceci n'est pas une page" | tee /etc/nginx/html/404.html
+echo "Ceci n'est pas une page" | sudo tee /etc/nginx/html/404.html
 
-service nginx restart
+sudo service nginx restart
