@@ -10,12 +10,12 @@ touch /etc/nginx/html/index.html
 
 echo "Hello World!" | tee /etc/nginx/html/index.html
 
+HOSTNAME=${hostname}
 cat <<EOF | tee /etc/nginx/sites-available/default
 server {
      listen 80;
-     listen [::]:80;
-     server_name _;
-
+     listen [::]:80 default_server;
+     add_header X-Served-By $HOSTNAME;
      root /etc/nginx/html;
      index index.html index.htm;
 
@@ -28,11 +28,9 @@ server {
         root /etc/nginx/html;
         internal;
      }
-
-     add_header X-Served-By $HOSTNAME;
 }
 EOF
 
 echo "Ceci n'est pas une page" | tee /etc/nginx/html/404.html
 
-service nginx restart
+sudo service nginx restart
