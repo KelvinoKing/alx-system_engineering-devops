@@ -38,8 +38,8 @@ frontend web
 backend web_servers
     mode http
     balance roundrobin
-    server 331584-web-01 54.157.190.140:80 check
-    server 331584-web-02 52.23.179.51:80 check
+    server web-01 54.157.190.140:80 check
+    server web-02 52.23.179.51:80 check
 EOF
 
 sudo systemctl restart haproxy
