@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+#store the PID in a variable
+pid=$(lsof -ti :80)
+
+# Check if the variable is not empty (meaning a process is using port 80)
+if [ -n "$pid" ]; then
+    echo "Process ID using port 80: $pid"
+
+    # Kill the process using port 80
+    kill "$pid"
+
+    echo "Process killed."
+else
+    echo "No process found using port 80."
+fi
+
+# Update Nginx configuration
+cat <<EOF | tee /etc/nginx/sites-available/default
+server {
+    listen 80;
+}
+EOF
