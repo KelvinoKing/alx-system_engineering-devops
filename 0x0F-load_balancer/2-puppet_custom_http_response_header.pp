@@ -1,48 +1,24 @@
-# 2-puppet_custom_http_response_header.pp
+#Create Nginx configuration server via puppet
 
-# Install Nginx package
+exec { 'update':
+  command => '/usr/bin/apt-get update',
+}
+
 package { 'nginx':
-  ensure => 'installed',
+  ensure  => present,
+  name    => 'nginx',
+  require => Exec['update'],
 }
 
-# Create HTML directory and files
-file { '/var/www/html':
-  ensure => 'directory',
-}
-
-file { '/var/www/html/index.html':
-  content => 'Hello World!',
-}
-
-file { '/var/www/html/404.html':
-  content => 'Ceci n\'est pas une page',
-}
-
-# Configure Nginx default site
-file { '/etc/nginx/sites-available/default':
-  content => "server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-    add_header X-Served-By $::{hostname};
-    root   /var/www/html;
-    index  index.html index.htm;
-
-    location /redirect_me {
-        return 301 http://kelvino.com/;
-    }
-
-    error_page 404 /404.html;
-    location = /404.html {
-        root /var/www/html;
-        internal;
-    }
-}",
+file_line { 'Add header':
+  ensure  => 'present',
+  path    => '/etc/nginx/sites-available/default',
+  after   => 'listen 80 default_server;',
+  line    => 'add_header X-Served-By $hostname;',
   require => Package['nginx'],
 }
 
-# Restart Nginx service
 service { 'nginx':
-  ensure    => 'running',
-  enable    => true,
-  subscribe => File['/etc/nginx/sites-available/default'],
+  ensure  => running,
+  require => Package['nginx'],
 }
