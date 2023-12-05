@@ -13,7 +13,6 @@ sudo apt-get update
 sudo apt-get install -y nginx
 
 # Create HTML directory and files
-sudo mkdir -p /var/www/html
 sudo tee /var/www/html/index.html > /dev/null <<EOL
 Hello World!
 EOL
@@ -27,12 +26,12 @@ sudo tee /etc/nginx/sites-available/default > /dev/null <<EOL
 server {
     listen 80 default_server;
     listen [::]:80 default_server;
-    add_header X-Served-By \$hostname;
+    add_header X-Served-By $HOSTNAME;
     root   /var/www/html;
     index  index.html index.htm;
 
     location /redirect_me {
-        return 301 http://cuberule.com/;
+        return 301 http://kelvino.com/;
     }
 
     error_page 404 /404.html;
@@ -45,10 +44,3 @@ EOL
 
 # Restart Nginx service
 sudo service nginx restart
-
-# Check if Nginx restarted successfully
-if [ $? -eq 0 ]; then
-    echo "Nginx restarted successfully."
-else
-    echo "Failed to restart Nginx. Check the configuration."
-fi
