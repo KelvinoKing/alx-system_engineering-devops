@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# Function to display information about a subdomain
+
+display_info() {
+  local subdomain=$1
+  local domain=$2
+  local record_type=$3
+  local destination=$4
+  echo "The subdomain $subdomain is a $record_type record and points to $destination"
+}
+
+# Function to audit subdomains for a given domain
+audit_domain() {
+  local domain=$1
+
+  # Default subdomains to check
+  subdomains=("www" "lb-01" "web-01" "web-02")
+
+  for subdomain in "${subdomains[@]}"; do
+    record_type=$(dig +short -t A "$subdomain"."$domain" | awk '{ if (NR == 1) print "A"; else print "CNAME"; exit }')
+    destination=$(dig +short "$subdomain"."$domain" | awk '{print $1}')
+    display_info "$subdomain" "$domain" "$record_type" "$destination"
+  done
+}
+
+# Check if both domain and subdomain are provided
+if [ $# -eq 2 ]; then
+  subdomain=$2
+  domain=$1
+  record_type=$(dig +short -t A "$subdomain"."$domain" | awk '{ if (NR == 1) print "A"; else print "CNAME"; exit }')
+  destination=$(dig +short "$subdomain"."$domain" | awk '{print $1}')
+  display_info "$subdomain" "$domain" "$record_type" "$destination"
+elif [ $# -eq 1 ]; then
+  audit_domain "$1"
+else
+  echo "Usage: $0 <domain> [subdomain]"
+  exit 1
+fi
