@@ -26,6 +26,6 @@ mysqldump -uroot -p"${MYSQL_ROOT_PASSWORD}" --all-databases > "${MYSQL_DUMP_FILE
 tar -czvf "${ARCHIVE_NAME}" "${MYSQL_DUMP_FILE}"
 
 # Remove the original MySQL dump file
-rm "${MYSQL_DUMP_FILE}"
+# rm "${MYSQL_DUMP_FILE}"
 
 echo "Backup completed successfully. Archive: ${ARCHIVE_NAME}"
