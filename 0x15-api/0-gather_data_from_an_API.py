@@ -26,7 +26,7 @@ def gather_data_from_api(employee_id):
         number_of_done_tasks = len(completed_tasks)
         total_number_of_tasks = len(todos)
 
-        print("Employee {} is done with tasks({}/{})".format(
+        print("Employee {} is done with tasks({}/{}):".format(
             employee_name,
             number_of_done_tasks,
             total_number_of_tasks))
