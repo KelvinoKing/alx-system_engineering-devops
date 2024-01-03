@@ -32,7 +32,7 @@ def gather_data_from_api(employee_id):
             total_number_of_tasks))
 
         for task in completed_tasks:
-            print(f"\t{task['title']}")
+            print(f"\t {task['title']}")
 
     except requests.exception.RequestException as e:
         print(f"Error fetching data from API: {e}")
