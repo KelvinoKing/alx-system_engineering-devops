@@ -1,12 +1,14 @@
 #!/usr/bin/python3
 """import requests module
 """
+
 import requests
 
 
 def top_ten(subreddit):
     """Prints 10 post's titles
     """
+
     url = f'https://www.reddit.com/r/{subreddit}/hot.json?limit=10'
     headers = {'User-Agent': 'My Reddit API Client'}
 
