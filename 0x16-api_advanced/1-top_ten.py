@@ -7,7 +7,7 @@ import requests
 def top_ten(subreddit):
     """Prints 10 post's titles
     """
-    url = f'https://www.reddit.com/r/{subreddit}/hot.json?limit=9'
+    url = f'https://www.reddit.com/r/{subreddit}/hot.json?limit=10'
     headers = {'User-Agent': 'My Reddit API Client'}
 
     try:
