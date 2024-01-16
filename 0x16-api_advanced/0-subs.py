@@ -17,15 +17,12 @@ def number_of_subscribers(subreddit):
 
     try:
         response = requests.get(url, headers=headers, allow_redirects=False)
+        response.raise_for_status()
 
-        if response.status_code == 200:
-            subreddit_info = response.json()
+        subreddit_info = response.json()
+        return subreddit_info['data']['subscribers']
 
-            return subreddit_info['data']['subscribers']
-        elif response.status_code == 404:
-            return 0
-        else:
-            return 0
-
-    except Exception as e:
+    except requests.exceptions.RequestException:
+        return 0
+    except KeyError:
         return 0
