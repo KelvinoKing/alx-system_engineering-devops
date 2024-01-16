@@ -33,9 +33,3 @@ def top_ten(subreddit):
     except KeyError:
 
         print("None")
-
-
-if __name__ == '__main__':
-
-    subreddit = "cybersecurity"
-    top_ten(subreddit)
