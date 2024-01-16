@@ -1,55 +1,47 @@
 #!/usr/bin/python3
 """
-recurse it.
+import requests module
 """
-
 import requests
 
 
 def recurse(subreddit, hot_list=None, after=None):
-    # Initializes the hot_list
+    """
+    queries the Reddit Api and returns a list containing the titles of
+    all hot articles for a given subreddit
+    """
+
     if hot_list is None:
         hot_list = []
 
-    # Define the URL for subreddit
-    url = f'https://www.reddit.com/r/{subreddit}/hot.json'
-    if after:
-        url += f'?after={after}'
-
-    headers = {'User-Agent': 'My Reddit API Client'}
+    url = f"https://www.reddit.com/r/{subreddit}/hot.json"
+    params = {'limit': 100, 'after': after}
+    headers = {'User-Agent': 'Kelvino'}
 
     try:
-        # Making HTTP GET request
-        response = requests.get(url, headers=headers)
-        response.raise_for_status()
-        data = response.json()
+        response = requests.get(url, params=params, headers=headers)
 
-        # Checks if the data contains posts
-        if 'data' in data and 'children' in data['data']:
-            # Extract titles of the current page of posts
-            for post in data['data']['children']:
-                hot_list.append(post['data']['title'])
+        if response.status_code == 200:
+            data = response.json()
+            children = data.get('data', {}).get('children', [])
 
-            # Checks if there are more pages
-            after_key = data['data']['after']
-            if after_key:
-                # recursive call to fetch the next page
-                return recurse(subreddit, hot_list, after_key)
-            else:
+            if not children:
+                if not hot_list:
+                    return None
+                else:
+                    return hot_list
 
-                return hot_list
+            for child in children:
+                title = child.get('data', {}).get('title', '')
+                hot_list.append(title)
+
+            after = data.get('data', {}).get('after', None)
+
+            return recurse(subreddit, hot_list, after)
+
+        if response.status_coe == 404:
+            return None
         else:
             return None
-    except requests.exceptions.RequestException:
-
+    except Exception:
         return None
-
-
-if __name__ == '__main__':
-
-    subreddit = "hacking"
-    result = recurse(subreddit)
-    if result is not None:
-        print(len(result))
-    else:
-        print("None")
