@@ -1,0 +1,16 @@
+# Nginx configuration file for /airbnb-onepage/
+
+server {
+
+    # listens to port 80
+
+    listen 80;
+    server_name 52.200.50.96;
+    add_header X-Served-By 331584-web-01;
+
+
+    location /airbnb-onepage/ {
+        proxy_pass http://127.0.0.1:5000;
+     }
+}
+
