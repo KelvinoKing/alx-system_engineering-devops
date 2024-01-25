@@ -1,0 +1,17 @@
+# Ngix configuration file
+
+server {
+    # Listen to port 80 both locally and using IP
+    listen 80;
+    server_name 52.200.50.96;
+    add_header X-Served-By 331584-web-01;
+
+    location = /airbnb-onepage/ {
+        proxy_pass http://127.0.0.1:5000/airbnb-onepage/;
+    }
+
+    # Location block using regex
+    location ~ ^/(airbnb-dynamic/)?number_odd_or_even/(\d+)$ {
+        proxy_pass http://127.0.0.1:5001/number_odd_or_even/$2;
+    }
+}   
